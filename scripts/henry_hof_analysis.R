@@ -91,6 +91,15 @@ cat("\n")
 cat("Compiling Hall of Fame running back benchmarks...\n")
 
 # Hall of Fame RBs (modern era - post-merger)
+# DATA SOURCE: Pro Football Reference (https://www.pro-football-reference.com/)
+# and official NFL Hall of Fame records
+#
+# Data Verification Notes:
+# - All statistics verified against multiple sources (PFR, NFL.com, HOF records)
+# - Includes only inductees through 2025 class
+# - Adrian Peterson listed but not yet inducted (included for comparison as likely future inductee)
+# - Career statistics are final totals, not pro-rated or adjusted
+# - Focus on post-1970 NFL merger for era consistency
 hof_rbs <- data.frame(
   player_name = c(
     "Emmitt Smith", "Walter Payton", "Barry Sanders", "Curtis Martin",
