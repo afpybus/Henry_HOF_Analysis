@@ -24,7 +24,7 @@ pacman::p_load(
 # Configuration
 OUTPUT_DIR <- "../output"
 PLOTS_DIR <- "../plots"
-CURRENT_SEASON <- 2024
+CURRENT_SEASON <- 2025
 
 # Create output directories if they don't exist
 dir.create(OUTPUT_DIR, showWarnings = FALSE, recursive = TRUE)
