@@ -1,0 +1,4 @@
+"scenario","years_added","yards_per_year","tds_per_year","projected_total_yards","projected_total_tds","final_seasons","exceeds_median_yards","exceeds_median_tds"
+"Conservative (2 yrs, 900 yds/yr)",2,900,8,14225,129,11,TRUE,TRUE
+"Moderate (2 yrs, 1200 yds/yr)",2,1200,10,14825,133,11,TRUE,TRUE
+"Optimistic (3 yrs, 1300 yds/yr)",3,1300,10,16325,143,12,TRUE,TRUE
