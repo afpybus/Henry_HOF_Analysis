@@ -97,6 +97,9 @@ His peak performance (2019-2020, 2024) was elite, and with 10 seasons of product
 
 - **NFL Statistics:** [nflreadr](https://nflreadr.nflverse.com/) package (2016-2025 seasons)
 - **Hall of Fame Data:** Historical records for modern-era (post-1970) Hall of Fame running backs
+  - Source: [Pro Football Reference](https://www.pro-football-reference.com/) and [NFL Hall of Fame](https://www.profootballhof.com/)
+  - Data stored in: [scripts/hof_data.R](scripts/hof_data.R) for easy verification
+  - All statistics cross-referenced across multiple sources
 
 ## Project Structure
 
@@ -105,7 +108,8 @@ Henry_HOF_Analysis/
 ├── README.md
 ├── LICENSE
 ├── scripts/
-│   └── henry_hof_analysis.R    # Main analysis script
+│   ├── henry_hof_analysis.R    # Main analysis script
+│   └── hof_data.R              # Hall of Fame reference data (external)
 ├── output/
 │   ├── henry_career_stats.csv
 │   ├── henry_season_stats.csv

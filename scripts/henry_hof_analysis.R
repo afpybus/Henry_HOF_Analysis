@@ -88,42 +88,11 @@ cat("\n")
 # SECTION 3: Hall of Fame Running Back Benchmarks
 # ==============================================================================
 
-cat("Compiling Hall of Fame running back benchmarks...\n")
+cat("Loading Hall of Fame running back reference data...\n")
 
-# Hall of Fame RBs (modern era - post-merger)
-# DATA SOURCE: Pro Football Reference (https://www.pro-football-reference.com/)
-# and official NFL Hall of Fame records
-#
-# Data Verification Notes:
-# - All statistics verified against multiple sources (PFR, NFL.com, HOF records)
-# - Includes only inductees through 2025 class
-# - Adrian Peterson listed but not yet inducted (included for comparison as likely future inductee)
-# - Career statistics are final totals, not pro-rated or adjusted
-# - Focus on post-1970 NFL merger for era consistency
-hof_rbs <- data.frame(
-  player_name = c(
-    "Emmitt Smith", "Walter Payton", "Barry Sanders", "Curtis Martin",
-    "LaDainian Tomlinson", "Jerome Bettis", "Eric Dickerson", "Tony Dorsett",
-    "Marshall Faulk", "Edgerrin James", "Thurman Thomas",
-    "John Riggins", "Marcus Allen", "Franco Harris", "Terrell Davis",
-    "Earl Campbell", "Adrian Peterson"
-  ),
-  rush_yards = c(
-    18355, 16726, 15269, 14101, 13684, 13662, 13259, 12739,
-    12279, 12246, 12074, 11352, 12243, 12120, 7607, 9407, 14918
-  ),
-  rush_tds = c(
-    164, 110, 99, 90, 145, 91, 90, 77,
-    100, 80, 65, 104, 123, 91, 60, 74, 120
-  ),
-  seasons = c(
-    15, 13, 10, 11, 11, 13, 11, 12,
-    12, 11, 13, 14, 16, 13, 7, 8, 15
-  ),
-  rush_titles = c(4, 0, 4, 0, 2, 0, 4, 0, 0, 1, 0, 0, 0, 0, 2, 3, 3),
-  first_ballot = c(TRUE, TRUE, TRUE, FALSE, TRUE, FALSE, TRUE, FALSE,
-                   TRUE, FALSE, FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, NA)
-)
+# Load external Hall of Fame data from separate file for easy verification
+# This data is manually entered and kept separate for review purposes
+source("hof_data.R")
 
 # Calculate benchmarks
 hof_benchmarks <- hof_rbs %>%
