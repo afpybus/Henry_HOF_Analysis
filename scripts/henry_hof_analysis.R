@@ -341,8 +341,16 @@ henry_team_progression <- player_stats %>%
   )
 
 # Create the probability timeline plot
+# First, get coordinates for connecting segment between Titans and Ravens
+titans_last <- henry_team_progression %>% filter(team_name == "Tennessee Titans") %>% slice_tail(n = 1)
+ravens_first <- henry_team_progression %>% filter(team_name == "Baltimore Ravens") %>% slice_head(n = 1)
+
 p4 <- ggplot(henry_team_progression, aes(x = season, y = hof_probability, color = team_name)) +
   geom_line(linewidth = 2) +
+  annotate("segment",
+           x = titans_last$season, y = titans_last$hof_probability,
+           xend = ravens_first$season, yend = ravens_first$hof_probability,
+           color = "#4B92DB", linewidth = 2) +
   geom_point(size = 4) +
   geom_hline(yintercept = 50, linetype = "dashed", color = "gray50", linewidth = 0.8) +
   geom_hline(yintercept = 80, linetype = "dashed", color = "darkgreen", linewidth = 0.8) +
@@ -351,7 +359,7 @@ p4 <- ggplot(henry_team_progression, aes(x = season, y = hof_probability, color 
   annotate("text", x = 2016.5, y = 83, label = "80% - Likely HOFer",
            color = "darkgreen", hjust = 0, size = 3.5) +
   scale_color_manual(
-    values = c("Tennessee Titans" = "#0C2340", "Baltimore Ravens" = "#241773"),
+    values = c("Tennessee Titans" = "#4B92DB", "Baltimore Ravens" = "#241773"),
     name = "Team"
   ) +
   scale_y_continuous(limits = c(0, 100), breaks = seq(0, 100, 20),

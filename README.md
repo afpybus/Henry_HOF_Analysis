@@ -80,12 +80,38 @@ Even conservative projections show Henry finishing with Hall of Fame-caliber car
 
 This chart shows Henry's estimated Hall of Fame probability over time, colored by team. The line shows a dramatic increase during his peak years (2019-2020) with the Tennessee Titans, when he won back-to-back rushing titles. After joining the Baltimore Ravens in 2024, his probability reached 100% by exceeding the Hall of Fame median benchmarks.
 
+**Probability Calculation Methodology:**
+
+The HOF probability is calculated using a simplified statistical model based on cumulative career statistics relative to Hall of Fame benchmarks:
+
+1. **Base Probability Calculation:**
+   - Calculate percentage of HOF median for cumulative rushing yards: `yards_pct = cumulative_yards / 12,739 × 100`
+   - Calculate percentage of HOF median for cumulative rushing TDs: `tds_pct = cumulative_tds / 91 × 100`
+   - Base probability = average of these two percentages: `base_prob = (yards_pct + tds_pct) / 2`
+   - Capped at 100% maximum
+
+2. **Accolade Bonus:**
+   - +5% bonus after winning first rushing title (2019 season)
+   - +10% bonus after winning second rushing title (2020 season onward)
+   - Additional major accolades (OPOY, All-Pro) implicitly reflected in statistical achievements
+
+3. **Final Probability:**
+   - `HOF_probability = min(100%, base_prob + accolade_bonus)`
+   - Ensures probability never exceeds 100% or falls below 0%
+
+**Key Thresholds:**
+- **50% (Possible HOFer):** Player approaching or near HOF median benchmarks
+- **80% (Likely HOFer):** Player significantly exceeds HOF median benchmarks
+- **100%:** Player has definitively exceeded both HOF median benchmarks with additional accolades
+
+This model provides a simplified estimate based on quantitative metrics. Actual Hall of Fame selection involves subjective factors including era dominance, cultural impact, and voting committee preferences.
+
 ## Key Strengths
 
 ✓ **2x NFL Rushing Champion** - Demonstrates elite peak performance
 ✓ **2,000-yard season** - Rare achievement (only 8 players in NFL history)
 ✓ **Physical dominance** - Changed how defenses game-plan
-✓ **Elite efficiency** - 4.87 yards per carry is exceptional
+✓ **Elite efficiency** - 4.89 yards per carry is exceptional
 ✓ **Already exceeds HOF median for TDs** - 122 TDs (median: 91)
 
 ## Key Weaknesses
@@ -103,6 +129,67 @@ This chart shows Henry's estimated Hall of Fame probability over time, colored b
 His peak performance (2019-2020, 2024) was elite, and with 10 seasons of production, he has both the peak and longevity needed for enshrinement.
 
 **Current Projection:** Hall of Famer. With 1-2 more productive seasons, he could become a **first-ballot** selection. He's already cemented his place among the all-time great running backs.
+
+## Era Context: Running Back Positional Devaluation
+
+### The Modern Running Back Challenge
+
+Derrick Henry's achievements must be understood within the context of **dramatic running back positional devaluation** in the modern NFL. Traditional Hall of Fame prediction models (including [Pro Football Reference's HOF Monitor](https://www.sports-reference.com/blog/pfr-hof-monitor-methodology/)) apply era adjustments for quarterbacks, wide receivers, and tight ends to account for the passing explosion post-1980, but **do not adjust expectations for running backs** despite significant changes to the position's role and value.
+
+### The MVP Drought
+
+**Last RB MVP:** Adrian Peterson (2012) - over 13 years ago
+
+Despite rushing for 2,027 yards in 2020 (8th-highest single season in NFL history), Henry won Offensive Player of the Year but wasn't seriously considered for MVP. As [ESPN's analysis](https://www.espn.com/nfl/story/_/id/37985469/why-star-nfl-running-backs-devalued-next-2023-free-agency-future) notes: *"A league that was once built around star backs dominating offensive workloads and competing for MVP awards now feels like something entirely different."*
+
+The reality: **A running back may never win MVP again** in the pass-dominant modern NFL, making "needs MVP for first-ballot lock" an unrealistic benchmark for evaluating 2020s running backs.
+
+### Hall of Fame Voting Reality
+
+Recent [Hall of Fame Class of 2026 voting](https://www.profootballhof.com/news/2025/11/26-modern-era-players-named-as-semifinalists-for-pro-football-hall-of-fame%E2%80%99s-class-of-2026/) illustrates the challenge:
+- **21 running backs** nominated initially
+- Only **2 advanced to semifinals** (Frank Gore, Fred Taylor)
+- Compare to: **5 WR semifinalists**, **3 QB semifinalists**
+
+Running backs face the toughest path to enshrinement in the modern era, with voting committees potentially undervaluing the position despite its historical importance.
+
+### Why This Makes Henry's Case Stronger
+
+Rather than weakening his candidacy, the modern context **amplifies Henry's achievements**:
+
+1. **Bucking the Trend**
+   - Produced elite, workhorse numbers in an era of running-back-by-committee
+   - Led the NFL in rushing (2019, 2020) when passing dominance was supposed to make this impossible
+   - Averaged 300+ carries in his peak seasons despite league-wide trend toward reduced RB workloads
+
+2. **Historic Rarity in Modern Context**
+   - 2,000-yard season in 2020 is **more impressive** than equivalent achievements pre-2010
+   - Only 8 players in NFL history have reached 2,000 rushing yards; Henry did it in the **pass-dominant era**
+   - Maintained 4.89 YPC over career despite being known commodity with high volume
+
+3. **Era Dominance**
+   - Not just good statistics - Henry **dominated his era** at the position
+   - Changed how defenses prepared and game-planned despite knowing he would get the ball
+   - Proved running backs could still be centerpiece of offense in 2020s
+
+### The Counterargument
+
+Some may argue Henry's statistics are **inflated** by being a volume back on run-heavy offenses. However:
+- His efficiency (4.89 YPC) remains elite despite predictable usage
+- His 2020 season came in a 16-game format (would extrapolate to 2,153 yards over 17 games)
+- He has maintained production into his 30s, defying typical RB aging curves
+
+### Implications for This Analysis
+
+**This analysis uses historical HOF benchmarks without era adjustment**, which means:
+
+1. **Traditional benchmarks may undervalue** modern RB achievements
+2. **MVP requirement is unrealistic** for 2020s running backs (Henry's OPOY is functionally equivalent)
+3. **Hall voters must decide**: Compare raw stats to historical RBs OR recognize era difficulty
+
+**Our Assessment:** Henry's achievements should be weighted **more heavily**, not less, when considering modern running back devaluation. Dominating the rushing title race in 2019-2020 is arguably more impressive than doing so in the 1970s-1990s when running backs were the focal point of most offenses.
+
+The Hall of Fame voting will ultimately determine whether voters apply this era context - but Henry's case is strengthened, not weakened, by the difficulty of accomplishing what he did in the modern NFL.
 
 ## Data Sources
 
