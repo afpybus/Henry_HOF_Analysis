@@ -39,7 +39,9 @@ cat("Starting Derrick Henry Hall of Fame Analysis...\n\n")
 cat("Loading NFL player statistics...\n")
 
 # Load player stats for Henry's career
-player_stats <- load_player_stats(seasons = 2016:CURRENT_SEASON)
+# IMPORTANT: Filter for regular season only (exclude playoffs) to match HOF benchmark standards
+player_stats <- load_player_stats(seasons = 2016:CURRENT_SEASON) %>%
+  filter(season_type == "REG")  # Regular season only - HOF stats are based on regular season
 
 # ==============================================================================
 # SECTION 2: Calculate Derrick Henry Career Statistics
@@ -289,6 +291,97 @@ p3 <- ggplot(proj_plot_data, aes(x = scenario, y = value, fill = scenario)) +
 
 ggsave(file.path(PLOTS_DIR, "henry_projections.png"), p3,
        width = 12, height = 7, dpi = 300, bg = "white")
+
+# Plot 4: Hall of Fame Probability Over Time by Team
+cat("Generating Hall of Fame probability timeline...\n")
+
+# Get team info for each season
+henry_team_progression <- player_stats %>%
+  filter(player_display_name == "Derrick Henry") %>%
+  group_by(season, team) %>%
+  summarize(
+    rush_yards = sum(rushing_yards, na.rm = TRUE),
+    rush_tds = sum(rushing_tds, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  arrange(season) %>%
+  mutate(
+    # Calculate cumulative stats
+    cumulative_yards = cumsum(rush_yards),
+    cumulative_tds = cumsum(rush_tds),
+    seasons_played = row_number(),
+
+    # Calculate HOF probability based on proximity to benchmarks
+    # Using a simple model:
+    # - If >= median yards AND median TDs: 80-100% based on additional factors
+    # - If close to median: 50-80%
+    # - If below: 0-50% based on distance
+    yards_pct = cumulative_yards / hof_benchmarks$median_rush_yards * 100,
+    tds_pct = cumulative_tds / hof_benchmarks$median_rush_tds * 100,
+
+    # Probability calculation (simplified model)
+    base_prob = pmin(100, (yards_pct + tds_pct) / 2),
+
+    # Adjust for rushing titles (Henry won in 2019 and 2020)
+    title_bonus = case_when(
+      season >= 2020 ~ 10,  # After 2 rushing titles
+      season == 2019 ~ 5,   # After 1 rushing title
+      TRUE ~ 0
+    ),
+
+    # Final probability estimate
+    hof_probability = pmin(100, pmax(0, base_prob + title_bonus)),
+
+    # Clean team names
+    team_name = case_when(
+      team == "TEN" ~ "Tennessee Titans",
+      team == "BAL" ~ "Baltimore Ravens",
+      TRUE ~ team
+    )
+  )
+
+# Create the probability timeline plot
+p4 <- ggplot(henry_team_progression, aes(x = season, y = hof_probability, color = team_name)) +
+  geom_line(linewidth = 2) +
+  geom_point(size = 4) +
+  geom_hline(yintercept = 50, linetype = "dashed", color = "gray50", linewidth = 0.8) +
+  geom_hline(yintercept = 80, linetype = "dashed", color = "darkgreen", linewidth = 0.8) +
+  annotate("text", x = 2016.5, y = 53, label = "50% - Possible HOFer",
+           color = "gray50", hjust = 0, size = 3.5) +
+  annotate("text", x = 2016.5, y = 83, label = "80% - Likely HOFer",
+           color = "darkgreen", hjust = 0, size = 3.5) +
+  scale_color_manual(
+    values = c("Tennessee Titans" = "#0C2340", "Baltimore Ravens" = "#241773"),
+    name = "Team"
+  ) +
+  scale_y_continuous(limits = c(0, 100), breaks = seq(0, 100, 20),
+                     labels = function(x) paste0(x, "%")) +
+  scale_x_continuous(breaks = 2016:2025) +
+  labs(
+    title = "Derrick Henry's Hall of Fame Probability Over Time",
+    subtitle = "Estimated probability based on cumulative statistics and accolades",
+    x = "Season",
+    y = "Hall of Fame Probability",
+    caption = "Probability model based on rushing yards, TDs, and rushing titles relative to HOF benchmarks"
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(
+    plot.title = element_text(size = 16, face = "bold"),
+    plot.subtitle = element_text(size = 11),
+    plot.caption = element_text(size = 9, color = "gray40", hjust = 0),
+    plot.margin = margin(10, 20, 10, 10),
+    panel.grid.minor = element_blank(),
+    legend.position = "bottom",
+    legend.title = element_text(face = "bold")
+  )
+
+ggsave(file.path(PLOTS_DIR, "henry_hof_probability.png"), p4,
+       width = 12, height = 7, dpi = 300, bg = "white")
+
+# Export the probability data
+write.csv(henry_team_progression %>%
+            select(season, team_name, cumulative_yards, cumulative_tds, hof_probability),
+          file.path(OUTPUT_DIR, "henry_hof_probability_timeline.csv"), row.names = FALSE)
 
 # ==============================================================================
 # SECTION 7: Export Results

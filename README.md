@@ -11,11 +11,11 @@ This project analyzes whether Derrick Henry should and will be inducted into the
 
 ### Current Status (Through 2025 Season)
 
-**Career Statistics:**
+**Career Statistics (Regular Season Only):**
 - **Seasons Played:** 10
-- **Career Rushing Yards:** 14,020 yards (110.1% of HOF median) ✓ **EXCEEDS MEDIAN**
-- **Career Rushing TDs:** 129 (141.8% of HOF median) ✓ **EXCEEDS MEDIAN**
-- **Yards per Carry:** 4.90
+- **Career Rushing Yards:** 13,018 yards (102.2% of HOF median) ✓ **EXCEEDS MEDIAN**
+- **Career Rushing TDs:** 122 (134.1% of HOF median) ✓ **EXCEEDS MEDIAN**
+- **Yards per Carry:** 4.89
 - **Major Accolades:**
   - 2x NFL Rushing Champion (2019, 2020)
   - 1x 2,000-yard season (2,027 yards in 2020)
@@ -30,12 +30,12 @@ This project analyzes whether Derrick Henry should and will be inducted into the
 
 ### What He Needs for LOCK Status
 
-Derrick Henry has **already exceeded the Hall of Fame median** for both rushing yards (14,020 vs 12,739) and touchdowns (129 vs 91). To become a **first-ballot lock**, he needs:
+Derrick Henry has **already exceeded the Hall of Fame median** for both rushing yards (13,018 vs 12,739) and touchdowns (122 vs 91). To become a **first-ballot lock**, he needs:
 
 1. **1-2 more productive seasons** (1,000+ rushing yards each)
-2. **Reach 15,000+ career rushing yards** (needs ~980 more)
+2. **Reach 15,000+ career rushing yards** (needs ~1,980 more)
 3. **Another rushing title or MVP award** (currently has 2 rushing titles)
-4. **Maintain elite yards-per-carry average** ✓ Currently at 4.90 YPC
+4. **Maintain elite yards-per-carry average** ✓ Currently at 4.89 YPC
 
 ### Career Projections
 
@@ -43,9 +43,9 @@ Three scenarios for Henry's career finish:
 
 | Scenario | Additional Years | Total Yards | Total TDs | HOF Status |
 |----------|-----------------|-------------|-----------|------------|
-| **Conservative** | 2 years @ 900 yds/yr | 15,820 | 145 | ✓ Strong HOF case |
-| **Moderate** | 2 years @ 1,200 yds/yr | 16,420 | 149 | ✓ Top 5 all-time |
-| **Optimistic** | 3 years @ 1,300 yds/yr | 17,920 | 159 | ✓ Top 3 all-time |
+| **Conservative** | 2 years @ 900 yds/yr | 14,818 | 138 | ✓ Strong HOF case |
+| **Moderate** | 2 years @ 1,200 yds/yr | 15,418 | 142 | ✓ Strong HOF case |
+| **Optimistic** | 3 years @ 1,300 yds/yr | 16,918 | 152 | ✓ Top 10 all-time |
 
 **All realistic scenarios result in Hall of Fame-worthy totals.**
 
@@ -69,13 +69,19 @@ Henry's career trajectory shows elite peak performance (2019-2020) with his 2,00
 
 Even conservative projections show Henry finishing with Hall of Fame-caliber career totals, well above the median for both rushing yards and touchdowns.
 
+### 4. Hall of Fame Probability Timeline
+
+![HOF Probability](plots/henry_hof_probability.png)
+
+This chart shows Henry's estimated Hall of Fame probability over time, colored by team. The line shows a dramatic increase during his peak years (2019-2020) with the Tennessee Titans, when he won back-to-back rushing titles. After joining the Baltimore Ravens in 2024, his probability reached 100% by exceeding the Hall of Fame median benchmarks.
+
 ## Key Strengths
 
 ✓ **2x NFL Rushing Champion** - Demonstrates elite peak performance
 ✓ **2,000-yard season** - Rare achievement (only 8 players in NFL history)
 ✓ **Physical dominance** - Changed how defenses game-plan
 ✓ **Elite efficiency** - 4.87 yards per carry is exceptional
-✓ **Already exceeds HOF median for TDs** - 113 TDs (median: 91)
+✓ **Already exceeds HOF median for TDs** - 122 TDs (median: 91)
 
 ## Key Weaknesses
 
@@ -87,7 +93,7 @@ Even conservative projections show Henry finishing with Hall of Fame-caliber car
 
 ## Bottom Line
 
-**Derrick Henry HAS NOW EXCEEDED the Hall of Fame benchmarks** for both rushing yards (110.1% of median) and touchdowns (141.8% of median). He has a **strong Hall of Fame case** with his current statistics.
+**Derrick Henry HAS NOW EXCEEDED the Hall of Fame benchmarks** for both rushing yards (102.2% of median) and touchdowns (134.1% of median). He has a **strong Hall of Fame case** with his current statistics.
 
 His peak performance (2019-2020, 2024) was elite, and with 10 seasons of production, he has both the peak and longevity needed for enshrinement.
 
@@ -95,7 +101,7 @@ His peak performance (2019-2020, 2024) was elite, and with 10 seasons of product
 
 ## Data Sources
 
-- **NFL Statistics:** [nflreadr](https://nflreadr.nflverse.com/) package (2016-2025 seasons)
+- **NFL Statistics:** [nflreadr](https://nflreadr.nflverse.com/) package (2016-2025 regular seasons only)
 - **Hall of Fame Data:** Historical records for modern-era (post-1970) Hall of Fame running backs
   - Source: [Pro Football Reference](https://www.pro-football-reference.com/) and [NFL Hall of Fame](https://www.profootballhof.com/)
   - Data stored in: [scripts/hof_data.R](scripts/hof_data.R) for easy verification
@@ -115,11 +121,13 @@ Henry_HOF_Analysis/
 │   ├── henry_season_stats.csv
 │   ├── hof_benchmarks.csv
 │   ├── henry_hof_comparison.csv
-│   └── henry_projections.csv
+│   ├── henry_projections.csv
+│   └── henry_hof_probability_timeline.csv
 └── plots/
     ├── henry_vs_hof_yards.png
     ├── henry_season_progression.png
-    └── henry_projections.png
+    ├── henry_projections.png
+    └── henry_hof_probability.png
 ```
 
 ## Reproducibility
