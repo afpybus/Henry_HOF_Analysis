@@ -17,6 +17,11 @@ This project analyzes whether Derrick Henry should and will be inducted into the
 - **Career Rushing TDs:** 122 (134.1% of HOF median) ✓ **EXCEEDS MEDIAN**
 - **Yards per Carry:** 4.89
 - **Major Accolades:**
+  - 2015 Heisman Trophy (Alabama)
+  - 2020 AP NFL Offensive Player of the Year
+  - 2020 AP First-Team All-Pro
+  - 2019 AP Second-Team All-Pro
+  - 4x Pro Bowl (2019, 2020, 2022, 2023)
   - 2x NFL Rushing Champion (2019, 2020)
   - 1x 2,000-yard season (2,027 yards in 2020)
 
@@ -55,7 +60,7 @@ Three scenarios for Henry's career finish:
 
 ![Henry vs HOF RBs](plots/henry_vs_hof_yards.png)
 
-This chart shows Derrick Henry's current career rushing yards compared to all modern-era Hall of Fame running backs. He's already in the top half and needs just 314 more yards to exceed the median.
+This chart shows Derrick Henry's current career rushing yards compared to all modern-era Hall of Fame running backs. With 13,018 career yards, he has already exceeded the Hall of Fame median of 12,739 yards.
 
 ### 2. Season-by-Season Progression
 
