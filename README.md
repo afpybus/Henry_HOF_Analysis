@@ -1,11 +1,17 @@
 # Derrick Henry Hall of Fame Analysis
 
-**Analysis Date:** January 11, 2026
-**Author:** Alyssa Pybus
+Data-driven analysis determining if Derrick Henry's career statistics merit Hall of Fame induction.
+
+**Built with [Claude Code](https://claude.ai/code)** | **Build Time:** ~3 hours | **Analysis Runtime:** ~30 seconds
+
+---
 
 ## Summary
 
 This project analyzes whether Derrick Henry should and will be inducted into the NFL Hall of Fame based on his career statistics compared to historical Hall of Fame running backs.
+
+**Analysis Date:** January 11, 2026
+**Author:** Alyssa Pybus
 
 ## Key Findings
 
@@ -239,4 +245,21 @@ MIT License - Copyright (c) 2026 Alyssa Pybus
 
 ---
 
-*Analysis conducted using official NFL statistics through the 2025 season.*
+## References
+
+This analysis relies on data and research from the following sources:
+
+- [nflreadr R Package](https://nflreadr.nflverse.com/) - NFL statistics data (2016-2025 regular seasons)
+- [Pro Football Reference](https://www.pro-football-reference.com/) - Hall of Fame running back historical data
+- [Pro Football Hall of Fame Official Site](https://www.profootballhof.com/) - Hall of Fame inductee information
+- [PFR Hall of Fame Monitor Methodology](https://www.sports-reference.com/blog/pfr-hof-monitor-methodology/) - HOF prediction model methodology
+- [Introducing the PFR HOF Monitor](https://medium.com/@sports_ref/introducing-the-pfr-hof-monitor-735fb3148727) - HOF Monitor background
+- [Pro Football RB Hall of Fame Monitor](https://www.pro-football-reference.com/hof/hofm_RB.htm) - Running back HOF scores
+- [ESPN: Is the era of star running backs over?](https://www.espn.com/nfl/story/_/id/37985469/why-star-nfl-running-backs-devalued-next-2023-free-agency-future) - Running back positional devaluation analysis
+- [Hall of Fame Class of 2026 Semifinalists](https://www.profootballhof.com/news/2025/11/26-modern-era-players-named-as-semifinalists-for-pro-football-hall-of-fame%E2%80%99s-class-of-2026/) - 2026 HOF voting data
+- [Derrick Henry - Wikipedia](https://en.wikipedia.org/wiki/Derrick_Henry) - Career overview and awards
+- [Heisman.com - Derrick Henry](https://www.heisman.com/heisman-winners/derrick-henry/) - Heisman Trophy information
+- [Titans: Derrick Henry Named to Fourth Career Pro Bowl](https://www.tennesseetitans.com/news/titans-rb-derrick-henry-named-to-fourth-career-pro-bowl) - Pro Bowl selections
+- [History of the Running Back Position - Decyfr Sport](https://decyfrsport.com/the-history-of-the-running-back-position/) - Historical RB context
+
+*Analysis conducted using official NFL statistics through the 2025 season. Created with assistance from [Claude Code](https://claude.ai/claude-code).*
